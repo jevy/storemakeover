@@ -2,6 +2,7 @@
 titlebar: Weekly Teardown Draw - Quickjack Conversions
 title: Weekly <strong>Teardown</strong> Draw
 subtitle:
+mailchimp: 
 ---
 
 <% latest_teardown = data.teardowns[0] %>
@@ -51,7 +52,7 @@ subtitle:
                 </p>
             </div>
             <div class="col-md-7 text wow fadeInUp animated">
-                <form class="form-inline" role="form" action="" method="post">
+                <form class="form-inline" role="form" action="<%= current_page.data.mailchimp %>" method="post">
                     <div class="form-group">
                         <label class="sr-only" for="subscribe-email">Email address</label>
                         <input type="text" name="FNAME" placeholder="First name" class="subscribe-fname form-control" id="subscribe-fname">
