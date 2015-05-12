@@ -1,5 +1,8 @@
 
 @media (min-width: 992px) and (max-width: 1199px) {
+
+	.subscribe-text { text-align: center; }
+	.form-inline button.subscribe-button { width: 420px; margin-top: 10px; }
 	
 	.form-bottom form .form-links { width: 190px; }
 	
@@ -17,6 +20,9 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+
+	.form-inline { margin-top: 40px; text-align: center; }
+	.subscribe-text { text-align: center; }
 
 	.section-description p { padding: 0; }
 	
@@ -41,6 +47,11 @@
 }
 
 @media (max-width: 767px) {
+
+	.subscribe-text { text-align: center; }
+	.form-inline { margin-top: 40px; }
+	.form-inline input.subscribe-email { margin-top: 6px; }
+	.form-inline button.subscribe-button { width: 100%; }
 	
 	.navbar { padding-top: 10px; }
 	.navbar.navbar-no-bg { background: #333; background: rgba(51, 51, 51, 0.9); }
