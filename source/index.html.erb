@@ -1,0 +1,165 @@
+---
+title: Weekly Teardown Draw - Quickjack Conversions
+---
+
+<% latest_teardown = data.teardowns[0] %>
+    
+    <div class="inner-bg">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 text wow fadeInUp">
+                    <h1>Weekly <strong>Teardown</strong> Draw</h1>
+                    <div class="description">
+                        <p>
+                            <!--Bacon ipsum dolor amet porchetta prosciutto ham, t-bone spare ribs frankfurter!-->
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 wow fadeInUp">
+                    <div class="youtube">
+                        <iframe width="853" height="480" src="https://www.youtube.com/embed/<%= latest_teardown.youtube_id %>?rel=0&amp;showinfo=0&amp;controls=1&amp;iv_load_policy=3&amp;wmode=transparent&amp;autohide=1" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 text wow fadeInUp">
+                    <div class="sub description">
+                        <p>
+                            <%= latest_teardown.title %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</div>
+
+<!-- Subscribe Form -->
+<div class="subscribe-area wow fadeInUp">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-1 text wow fadeInLeft animated">
+                <p class="subscribe-text">
+                    Keep me updated!
+                </p>
+            </div>
+            <div class="col-sm-7 text wow fadeInUp animated">
+                <form class="form-inline" role="form" action="" method="post">
+                    <div class="form-group">
+                        <label class="sr-only" for="subscribe-email">Email address</label>
+                        <input type="text" name="FNAME" placeholder="First name" class="subscribe-fname form-control" id="subscribe-fname">
+                        <input type="text" name="EMAIL" placeholder="Email" class="subscribe-email form-control" id="subscribe-email">
+                    </div>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;">
+                        <input type="text" name="b_208f36fee9ec73b69fa3351ec_4d140e525b" tabindex="-1" value="">
+                    </div>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+                <div class="success-message"></div>
+                <div class="error-message"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Introduction -->
+<div class="section-container section-container-gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7 always-beautiful-box wow fadeInLeft">
+                <div class="always-beautiful-box-text always-beautiful-box-text-left">
+                    <p class="medium-paragraph">
+                        I help web apps and ecommerce store convert like crazy. To keep things fresh, I'm going to do teardowns on a request basis. The catch? You'll be selected at random.
+                    </p>
+                    <br />
+                    <p>
+                        Getting started doing A/B testing is tough. The easy changes like button colours and call to actions are the low hanging fruit that may or may not get to the core issues with your site. You need out of the box ideas to convert better.
+                    </p>
+                    <br />
+                    <p>
+                        Things I will cover in about 5-10 minutes:
+                        <ul>
+                            <li>Ideas for better copywriting on your site</li>
+                            <li>Basic User Experience changes you can make</li>
+                            <li>Structuring your site to lead a user down the path you want</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-5 always-beautiful-box wow fadeInUp">
+                <img class="tpad-60" src="img/devices/pc2.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Typeform section -->
+<div class="section-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 more-features section-description wow fadeIn">
+                <h2>Want to get one done for yourself?</h2>
+                <div class="divider-1 wow fadeInUp"><span></span></div>
+            </div>
+        </div>
+        <div class="row">
+
+            <p class="medium-paragraph">
+                Add yourself to the weekly draw by applying below:
+            </p>
+            
+            <!-- Typeform -->
+            <div class="typeform-widget" data-url="https://quickjack.typeform.com/to/g38pfS" data-text="teardown-draw" style="width:100%;height:500px;"></div>
+            
+            <script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'widget.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
+            <!-- /Typeform -->
+
+            <p class="medium-paragraph">
+                Need one right away? They cost $250 and delivered within 2 business days. Simply email me: <a href="mailto:jevin@quickjack.ca">jevin@quickjack.ca</a>.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- More features -->
+<div class="more-features-container section-container section-container-gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 more-features section-description wow fadeIn">
+                <h2>Previous Teardowns</h2>
+                <div class="divider-1 wow fadeInUp"><span></span></div>
+            </div>
+        </div>
+        <%
+        i = 0
+        data.teardowns.drop(1).each do |article|
+        i = i + 1
+        if i == 1 %>
+        <div class="row">
+        <% end %>
+        
+            <div class="col-sm-4 wow fadeInUp teardown-archive">
+                <a class="fancybox iframe" href="https://www.youtube.com/embed/<%= article.youtube_id %>?rel=0&amp;showinfo=0&amp;controls=1&amp;iv_load_policy=3&amp;wmode=transparent&amp;autohide=1&amp;autoplay=1" frameborder="0" allowfullscreen>
+                    <img src="http://img.youtube.com/vi/<%= article.youtube_id %>/mqdefault.jpg">
+                    <p><%= article.title %></p>
+                </a>
+            </div>        
+
+        <% if i == 3 %>
+        </div>
+        <%
+        end
+        end
+        if i < 3 %>
+        </div>
+        <% end %>
+    </div>
+</div>
