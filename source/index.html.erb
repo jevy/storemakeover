@@ -2,7 +2,6 @@
 titlebar: Weekly Teardown Draw - Quickjack Conversions
 title: Weekly <strong>Teardown</strong> Draw
 subtitle:
-mailchimp: 
 ---
 
 <% latest_teardown = data.teardowns[0] %>
@@ -52,20 +51,22 @@ mailchimp:
                 </p>
             </div>
             <div class="col-md-7 text wow fadeInUp animated">
-                <form class="form-inline" role="form" action="<%= current_page.data.mailchimp %>" method="post">
-                    <div class="form-group">
-                        <label class="sr-only" for="subscribe-email">Email address</label>
-                        <input type="text" name="FNAME" placeholder="First name" class="subscribe-fname form-control" id="subscribe-fname">
-                        <input type="text" name="EMAIL" placeholder="Email" class="subscribe-email form-control" id="subscribe-email">
-                    </div>
-                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                    <div style="position: absolute; left: -5000px;">
-                        <input type="text" name="b_208f36fee9ec73b69fa3351ec_4d140e525b" tabindex="-1" value="">
-                    </div>
-                    <button type="submit" class="btn subscribe-button">Subscribe</button>
-                </form>
-                <div class="success-message"></div>
-                <div class="error-message"></div>
+                <div class="subscribe">
+                    <form class="form-inline" role="form" action="//quickjack.us2.list-manage.com/subscribe/post?u=5a9c805af5eb623a67d39e8dd&amp;id=29e009049d" method="post">
+                        <div class="form-group">
+                            <label class="sr-only" for="subscribe-email">Email address</label>
+                            <input type="text" name="FNAME" placeholder="First name" class="subscribe-fname form-control" id="subscribe-fname">
+                            <input type="text" name="EMAIL" placeholder="Email" class="subscribe-email form-control" id="subscribe-email">
+                        </div>
+                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;">
+                            <input type="text" name="b_208f36fee9ec73b69fa3351ec_4d140e525b" tabindex="-1" value="">
+                        </div>
+                        <button type="submit" class="btn subscribe-button">Subscribe</button>
+                    </form>
+                    <div class="success-message"></div>
+                    <div class="error-message"></div>
+                </div>
             </div>
         </div>
     </div>

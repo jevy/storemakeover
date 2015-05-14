@@ -64,6 +64,78 @@ jQuery(document).ready(function() {
         height: height,
         autoDimensions: false
     });
+
+    /*
+        Subscription form (Mailchimp)
+    */  
+    $('.subscribe form').submit(function(e) {
+        e.preventDefault();
+        var postdata = $('.subscribe form').serialize();
+        $.ajax({
+            type: 'POST',
+            url: '//quickjack.us2.list-manage.com/subscribe/post-json?u=5a9c805af5eb623a67d39e8dd&amp;id=29e009049d&c=?',
+            data: postdata,
+            dataType: 'jsonp',
+            success: function(data) {
+                if(data['result'] != "success") {
+                    var index = -1;
+                    var msg;
+
+                    try {
+                        var parts = data['msg'].split(' - ', 2);
+                        if (parts[1]==undefined){
+                            msg = data['msg'];
+                        } else {
+                            i = parseInt(parts[0]);
+                            if (i.toString() == parts[0]){
+                                index = parts[0];
+                                msg = parts[1];
+                            } else {
+                                index = -1;
+                                msg = data['msg'];
+                            }
+                        }
+                    } catch(e) {
+                        index = -1;
+                        msg = data['msg'];
+                    }
+
+                    try {
+                        switch(parseInt(index)) {
+                            case 0:
+                                if (msg == "Please enter a value") msg = "Please enter your email address";
+                                break;
+                            case 1:
+                                if (msg == "Please enter a value") msg = "Please enter your first name";
+                                break;
+                            default:
+                                break;
+                        }
+                    } catch (e) {
+                        msg = data['msg'];
+                    }
+
+                    $('.success-message').hide();
+                    $('.error-message').hide();
+                    $('.error-message').html(msg);
+                    $('.error-message').fadeIn('fast', function(){
+                        $('.subscribe form').addClass('animated shake').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                            $(this).removeClass('animated shake');
+                        });
+                    });
+                }
+                else {
+                    $('.error-message').hide();
+                    $('.success-message').hide();
+                    $('.subscribe form').hide();
+                    $('.success-message').html(data['msg']);
+                    $('.success-message').fadeIn('fast', function(){
+                        $('.top-content').backstretch("resize");
+                    });
+                }
+            }
+        });
+    });
 	
 });
 
