@@ -4,7 +4,7 @@
 
 activate :s3_sync do |s3_sync|
   s3_sync.bucket                     = 'www.storemakeover.co'   # The name of the S3 bucket you are targetting. This is globally unique.
-  s3_sync.region                     = 'us-west-1'              # The AWS region for your bucket.
+  s3_sync.region                     = 'us-east-1'              # The AWS region for your bucket.
   s3_sync.delete                     = true                     # We delete stray files by default.
   s3_sync.after_build               = true
 end
