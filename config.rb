@@ -1,4 +1,17 @@
 ###
+# Auto generated teardown pages
+###
+
+data.teardowns.drop(1).each do |teardown|
+  proxy "/#{teardown.slug}.html", "single.html", locals: { 
+    slug: teardown.slug,
+    title: teardown.title,
+    youtube_id: teardown.youtube_id,
+    previous_teardowns: data.teardowns.select{ |t| t.title != teardown.title }
+  }, ignore: true
+end
+
+###
 # Amazon S3 Sync
 ###
 

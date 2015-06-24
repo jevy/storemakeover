@@ -172,16 +172,16 @@ subtitle: Get actionable feedback to increase sales from conversion & marketing 
         </div>
         <%
         i = 0
-        data.teardowns.drop(1).each do |article|
+        data.teardowns.drop(1).each do |teardown|
         i = i + 1
         if i == 1 %>
         <div class="row">
         <% end %>
         
             <div class="col-sm-4 wow fadeInUp teardown-archive">
-                <a class="fancybox iframe" href="https://www.youtube.com/embed/<%= article.youtube_id %>?rel=0&amp;showinfo=0&amp;controls=1&amp;iv_load_policy=3&amp;wmode=transparent&amp;autohide=1&amp;autoplay=1" frameborder="0" allowfullscreen>
-                    <img src="http://img.youtube.com/vi/<%= article.youtube_id %>/mqdefault.jpg">
-                    <p><%= article.title %></p>
+                <a href="<%= teardown.slug %>">
+                    <img src="http://img.youtube.com/vi/<%= teardown.youtube_id %>/mqdefault.jpg">
+                    <p><%= teardown.title %></p>
                 </a>
             </div>        
 

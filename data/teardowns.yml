@@ -1,8 +1,12 @@
-- title: WP Expert
+- slug: wp-expert
+  title: WP Expert
   youtube_id: _uC6fx6FKLM
-- title: MortgageInOttawa.com
+- slug: mortgate-in-ottawa
+  title: MortgageInOttawa.com
   youtube_id: jjkZMGDH6Fk
-- title: Huify
+- slug: huify
+  title: Huify
   youtube_id: lAi777H5V2U
-- title: PN-Painting
+- slug: pn-painting
+  title: PN-Painting
   youtube_id: W6MFPX0J71Y

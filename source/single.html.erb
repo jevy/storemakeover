@@ -1,0 +1,108 @@
+---
+titlebar:
+title: Give Your Store a <strong>Conversion Makeover</strong>
+subtitle: Get actionable feedback to increase sales from conversion & marketing experts
+---
+
+    
+    <div class="inner-bg">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 text wow fadeInUp">
+                    <h1><%= current_page.data.title %></h1>
+                    <div class="description">
+                        <p><%= current_page.data.subtitle %></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 wow fadeInUp">
+                    <div class="youtube">
+                        <iframe width="853" height="480" src="https://www.youtube.com/embed/<%= youtube_id %>?rel=0&amp;showinfo=0&amp;controls=1&amp;iv_load_policy=3&amp;wmode=transparent&amp;autohide=1" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 text wow fadeInUp">
+                    <div class="sub description">
+                        <p>
+                            <%= title %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</div>
+
+<!-- Subscribe Form -->
+<div class="subscribe-area wow fadeInUp">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-offset-1 text wow fadeInLeft animated">
+                <p class="subscribe-text">
+                    Keep me updated!
+                </p>
+            </div>
+            <div class="col-md-7 text wow fadeInUp animated">
+                <div class="subscribe">
+                    <form class="form-inline" role="form" action="//quickjack.us2.list-manage.com/subscribe/post?u=5a9c805af5eb623a67d39e8dd&amp;id=29e009049d" method="post">
+                        <div class="form-group">
+                            <label class="sr-only" for="subscribe-email">Email address</label>
+                            <input type="text" name="FNAME" placeholder="First name" class="subscribe-fname form-control" id="subscribe-fname">
+                            <input type="text" name="EMAIL" placeholder="Email" class="subscribe-email form-control" id="subscribe-email">
+                        </div>
+                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;">
+                            <input type="text" name="b_208f36fee9ec73b69fa3351ec_4d140e525b" tabindex="-1" value="">
+                        </div>
+                        <button type="submit" class="btn subscribe-button">Subscribe</button>
+                    </form>
+                    <div class="success-message"></div>
+                    <div class="error-message"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- More features -->
+<div class="more-features-container section-container section-container-gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 more-features section-description wow fadeIn">
+                <h2>Previous Teardowns</h2>
+                <div class="divider-1 wow fadeInUp"><span></span></div>
+            </div>
+        </div>
+        <%
+        i = 0
+        first_done = false
+        previous_teardowns.each do |teardown|
+        i = i + 1
+        if i == 1 %>
+        <div class="row">
+        <% end %>
+            <div class="col-sm-4 wow fadeInUp teardown-archive">
+                <a href="<%= (i==1 && first_done == false) ? "/" : teardown.slug %>" frameborder="0" allowfullscreen>
+                    <img src="http://img.youtube.com/vi/<%= teardown.youtube_id %>/mqdefault.jpg">
+                    <p><%= teardown.title %></p>
+                </a>
+            </div>        
+
+        <% if i == 3 %>
+        </div>
+        <%
+        end
+        end
+        if i < 3 %>
+        </div>
+        <% end %>
+    </div>
+</div>
+</ul>
