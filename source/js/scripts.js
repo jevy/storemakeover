@@ -50,22 +50,6 @@ jQuery(document).ready(function() {
 	});
 
     /*
-        Fancybox
-    */
-    var width = $(window).width();
-    if (width > 945) width = 945;
-    height = width * 0.65;
-
-
-    $("a.fancybox").fancybox({
-        //width: 945,
-        //height: 556
-        width: width,
-        height: height,
-        autoDimensions: false
-    });
-
-    /*
         Subscription form (Mailchimp)
     */  
     $('.subscribe form').submit(function(e) {
