@@ -162,10 +162,10 @@ subtitle: Get actionable feedback to increase sales from conversion & marketing 
         <% end %>
         
             <div class="col-sm-4 wow fadeInUp teardown-archive">
-                <a href="<%= teardown.slug %>">
+                <% link_to teardown.slug do %>
                     <img src="http://img.youtube.com/vi/<%= teardown.youtube_id %>/mqdefault.jpg">
                     <p><%= teardown.title %></p>
-                </a>
+                <% end %>
             </div>        
 
         <% if i == 3 %>
