@@ -80,6 +80,10 @@ iframe {
     border-bottom: 3px solid #ddd !important;
 }
 
+.tpad-40 {
+    padding-top: 40px;
+}
+
 .tpad-60 {
     padding-top: 60px;
 }
