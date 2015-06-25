@@ -1,3 +1,6 @@
+set :css_dir, './css'
+set :js_dir, './js'
+
 ###
 # Auto generated teardown pages
 ###
